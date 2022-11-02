@@ -128,6 +128,8 @@ button:active{
   height: 90px;
   width: 200px;
   align-self: center;
+  background-color: #0074d6;
+  color: white;
 }
 
 .type-buttons {

@@ -9,7 +9,8 @@ export class TypeIndicator extends React.Component {
         let text = this.props.typeName;
         return (
             <button 
-                className='type-indicator'>
+                className='type-indicator' disabled>
+                    {this.props.type}
             </button>
         )
     }
