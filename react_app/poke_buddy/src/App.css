@@ -48,6 +48,7 @@ button {
 button:active{
   color: rgba(255, 255, 255, 0);
 }
+
 .full-List {
   max-width: 675px;
 }
@@ -121,6 +122,17 @@ button:active{
 
 .Water {
   background-color: #4d91d2;
+}
+
+.type-indicator {
+  height: 90px;
+  width: 200px;
+  align-self: center;
+}
+
+.type-buttons {
+  display: flex;
+  flex-direction: column;
 }
 
 .App-link {

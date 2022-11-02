@@ -1,7 +1,7 @@
 import logo from './pokemonLogo.jpeg';
 import './App.css';
-import {TypeList} from './Components/typeList/TypeList.js';
-
+//import {TypeList} from './Components/typeList/TypeList.js';
+import {OpponentType} from './Components/opponentType/OpponentType.js'
 function App() {
   return (
     <div className="App">
@@ -10,15 +10,15 @@ function App() {
         <p>
           Welcome to PokeBuddy
         </p>
-        <a
+{/*        <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Enter
-        </a>
-        <TypeList />
+  </a>*/}
+        <OpponentType />
       </header>
     </div>
   );
