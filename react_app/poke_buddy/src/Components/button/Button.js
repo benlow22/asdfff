@@ -12,8 +12,7 @@ export class Button extends React.Component {
     }*/
 
     handleAddType(e) {
-        const type = e.target.value
-        console.log('TYPE:', type);
+        const type = e.target.value     // get value from button clicked
         this.props.onClick(type)
     }
 
