@@ -23,7 +23,7 @@ export class TypeList extends React.Component {
         return (
             <div className="full-List">
                 {pokemonTypes.map(type=>{
-                    return <Button typeName={type} onClick={this.handleClick}/>
+                    return <Button typeName={type} onClick={this.handleClick} id={type} key={type}/>
                 })}           
             </div>
         )
