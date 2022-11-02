@@ -8,7 +8,11 @@ export class TypeList extends React.Component {
         console.log(pokemon1type);
 
         return (
-            <Button typeName={pokemon1type}/>
+            <div className="full-List">
+                {pokemonTypes.map(type=>{
+                    return <Button typeName={type}/>
+                })}           
+            </div>
         )
     }
 }
