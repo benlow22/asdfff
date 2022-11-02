@@ -2,14 +2,15 @@ import React from 'react';
 
 export class Button extends React.Component {
 
-    handleClick() {
+
+    /*handleClick() {
         this.props.onClick
-    }
+    }*/
 
     render(){
         return (
             <button 
-                onClick={this.handleClick} 
+                //onClick={this.handleClick} 
                 className={this.props.typeName}>
                 {this.props.typeName}
             </button>

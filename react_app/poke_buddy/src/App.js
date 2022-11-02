@@ -18,7 +18,7 @@ function App() {
         >
           Enter
         </a>
-        <typeList />
+        <TypeList />
       </header>
     </div>
   );
