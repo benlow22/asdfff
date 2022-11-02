@@ -59,6 +59,7 @@ export class OpponentType extends React.Component {
             <div className='type-buttons'>
                 <TypeIndicator type={this.state.type1}/>
                 <TypeIndicator type={this.state.type2}/>
+                <br></br>
                 <TypeList onAdd={this.addType}/>
             </div>
         )
