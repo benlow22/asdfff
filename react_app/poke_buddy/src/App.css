@@ -27,6 +27,102 @@
   color: white;
 }
 
+button {
+  color: white;
+  font-size: 1.5rem;
+  font-family: Arial;
+  font-variant-caps: small-caps;
+  margin: 0.75rem;
+  width: 105px;
+  padding: 6px;
+  border-radius: 10px;
+  text-shadow: 0 1px 1px rgb(207, 207, 207);
+  box-shadow: 
+    0 0 0 1px #b3b3b3 inset,
+    0 0 0 2px rgba(255, 255, 255, 0.15) inset,
+    0 4px 0 0 #444444,
+    0 4px 0 1px rgba(0, 0, 0, 0.4),
+    0 5px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+button:active{
+  color: rgba(255, 255, 255, 0);
+}
+.full-List {
+  max-width: 675px;
+}
+.Bug {
+  background-color: #8ebc2e;
+}
+
+.Dark {
+  background-color: #5b545d;
+}
+
+.Dragon {
+  background-color: #0074d6;
+}
+
+.Electric {
+  background-color: #f7d041;
+}
+
+.Fairy {
+  background-color: #e792e8
+}
+
+.Fighting {
+  background-color: #d23c67;
+}
+
+.Fire {
+  background-color: #fc9b59;
+}
+
+.Flying {
+  background-color: #92a7e4;
+}
+
+.Ghost {
+  background-color: #516aac;
+}
+
+.Grass {
+  background-color: #62bf57;
+}
+
+.Ground {
+  background-color: #dd7443;
+}
+
+.Ice {
+  background-color: #72d1c1;
+}
+
+.Normal {
+  background-color: #909aa3;
+}
+
+.Poison {
+  background-color: #b167c6;
+}
+
+.Psychic {
+  background-color: #fa7578;
+}
+
+.Rock {
+  background-color: #c8b58d;
+}
+
+.Steel {
+  background-color: #578fa6;
+}
+
+.Water {
+  background-color: #4d91d2;
+}
+
 .App-link {
   color: #61dafb;
 }
