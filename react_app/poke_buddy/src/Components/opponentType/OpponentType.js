@@ -11,8 +11,8 @@ export class OpponentType extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            type1: false,
-            type2: false,
+            type1: 'Type 1',
+            type2: 'Type 2',
             count: 1
         }
         //this.addOneState = this.addOneState.bind(this);
@@ -22,7 +22,7 @@ export class OpponentType extends React.Component {
 
     addType(newType) {
         
-        if (!this.state.type1 || this.state.count % 2 == 1) {
+        if (!this.state.type1 || this.state.count % 2 === 1) {
             this.setState({
                 type1: newType,
                 count: this.state.count+1

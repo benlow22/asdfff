@@ -121,15 +121,15 @@ button:active{
 }
 
 .Water {
-  background-color: #4d91d2;
+  background-color: var(--water-color);
 }
 
 .type-indicator {
   height: 90px;
   width: 200px;
   align-self: center;
-  background-color: #0074d6;
   color: white;
+  font-size: 40px;
 }
 
 .type-buttons {
@@ -148,4 +148,8 @@ button:active{
   to {
     transform: rotate(360deg);
   }
+}
+
+:root {
+  --water-color: #4d91d2;
 }
