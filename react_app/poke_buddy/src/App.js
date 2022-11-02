@@ -1,5 +1,6 @@
 import logo from './pokemonLogo.jpeg';
 import './App.css';
+import {TypeList} from './Components/typeList/TypeList.js';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         >
           Enter
         </a>
+        <typeList />
       </header>
     </div>
   );
