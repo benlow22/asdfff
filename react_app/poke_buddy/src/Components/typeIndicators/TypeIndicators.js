@@ -8,7 +8,7 @@ export function TypeIndicator (props) {
                 {props.type}
         </button>    )
 
-}   
+};
 
 
 

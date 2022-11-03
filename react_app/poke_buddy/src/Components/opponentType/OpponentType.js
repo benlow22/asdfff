@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TypeList } from '../typeList/TypeList';
 import { TypeIndicator } from '../typeIndicators/TypeIndicators';
 
@@ -12,14 +12,38 @@ import { TypeIndicator } from '../typeIndicators/TypeIndicators';
 export function Homepage () {
     const [ type1, setType1 ] = useState('Type 1');
     const [ type2, setType2 ] = useState('Type 2');
+    const [ newType, setNewType]    = useState('Type 1');
 
     const handleAdd = (type) => {
-        if (type1 === 'Type 1') {
-            setType1(type);
-        } else {
-            setType2(type);
-        }
+        setNewType(type)
     }
+
+    useEffect(()=>{
+        if (type1 !== 'Type 1') {
+            setType2(newType)
+        } if (type1 === 'Type 1') {
+            setType1(newType);
+        } 
+    }, [newType]);
+
+
+
+
+    useEffect (()=>{
+        document.addEventListener('keydown', event => {
+            if(event.code === 'Space') {
+                setType1('Type 1');
+                setType2('Type 2');
+                setNewType('Type 1');
+            }
+        })
+            /*return () =>{ document.removeEventListener('keydown', event => {
+                if(event.code === 'Space') {
+                    setType1('Type 1');
+                    setType2('Type 2')
+                }
+            })}*/
+    },[]);          // use [] because you only want to add the listener once at the beginning 
 
     return (
         <div>
