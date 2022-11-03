@@ -2,18 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { TypeList } from '../typeList/TypeList';
 import { TypeIndicator } from '../typeIndicators/TypeIndicators';
 
-const initialState = {
-    type1: 'Type 1',
-    type2: 'Type 2',
-    newType: 'Type 1'
-}; 
+
 
 // using useState and function class 
 
 export function Homepage () {
     const [ type1, setType1 ] = useState('Type 1');
     const [ type2, setType2 ] = useState('Type 2');
-    const [ newType, setNewType ]    = useState(null);
 
     const handleAdd = (type) => {
         if (type1 === 'Type 1') {
@@ -31,18 +26,14 @@ export function Homepage () {
     }
 
     useEffect (()=>{
-        document.addEventListener('keypress', event => {
+        document.addEventListener('keydown', event => {
+            if(event.code === 'ShiftLeft') {
                 clearButtons();
-            
-        })
-            /*return () =>{ document.removeEventListener('keydown', event => {
-                if(event.code === 'Space') {
-                    setType1('Type 1');
-                    setType2('Type 2')
-                }
-            })}*/
+    }})
     },[]);          // use [] because you only want to add the listener once at the beginning 
 
+
+    
     return (
         <div>
             <div className='opponent-Stats'>
