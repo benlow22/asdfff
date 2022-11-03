@@ -1,15 +1,35 @@
 import React from 'react';
 
-export class Button extends React.Component {
+
+export function Button (props) {
+ 
+    const handleAddType = ({target}) => {
+        const type = target.value     // get value from button clicked
+        props.onClick(type)
+    }
+    
+    return (
+        <button 
+            //onClick={this.handleClick}
+            type="submit"
+            className={props.typeName} 
+            value={props.typeName} 
+            onClick={handleAddType}>
+            {props.typeName}
+        </button>
+    )
+}
+
+/* export class Button extends React.Component {
     constructor(props) {
         super(props)
         this.handleAddType = this.handleAddType.bind(this);
     }
 
 
-    /*handleClick() {
+    /* ////// handleClick() {
         this.props.onClick
-    }*/
+    } ////// * /
 
     handleAddType(e) {
         const type = e.target.value     // get value from button clicked
@@ -28,4 +48,4 @@ export class Button extends React.Component {
             </button>
         )
     }
-}
+}*/

@@ -6,8 +6,7 @@ import { pokemonTypes } from '../../database.js';
 export function TypeList (props) {
 
 
-    const handleClick = ({target}) => {
-        const type = target.value;
+    const handleClick = (type) => {
         props.onAdd(type);
     }
 
@@ -20,7 +19,6 @@ export function TypeList (props) {
                         onClick={handleClick} 
                         //id={type} 
                         //key={type}
-                        value={type}
                     />
                 )
             })}           

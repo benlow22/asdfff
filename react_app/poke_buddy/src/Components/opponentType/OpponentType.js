@@ -72,14 +72,14 @@ export function Homepage () {
 
 
 
-    /* /////////
+    * /////////
     addOneState(newType) {
         console.log('weMade it to the OpponentType:', newType);
         this.setState({
             type1:newType
         })
-    } /////////*/ 
-/*
+    } /////////*
+
     render() {
         let type1= this.state.type1;
         let type2= this.state.type2;    

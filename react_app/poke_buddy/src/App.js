@@ -1,7 +1,7 @@
 import logo from './pokemonLogo.jpeg';
 import './App.css';
 //import {TypeList} from './Components/typeList/TypeList.js';
-import {Homepage, OpponentType} from './Components/opponentType/OpponentType.js'
+import {Homepage} from './Components/opponentType/OpponentType.js'
 function App() {
   return (
     <div className="App">
