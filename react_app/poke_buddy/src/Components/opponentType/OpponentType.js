@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TypeList } from '../typeList/TypeList';
 import { TypeIndicator } from '../typeIndicators/TypeIndicators';
 
@@ -6,6 +6,27 @@ const initialState = {
     type1: false,
     type2: false
 }; 
+
+// using useState and function class 
+
+export function Homepage () {
+    const [ type1, setType1 ] = useState('Type 1');
+    const [ type2, setType2 ] = useState('Type 2');
+
+
+
+    return (
+        <div>
+            <div className='opponent-Stats'>
+                <TypeIndicator />
+                <TypeIndicator />
+            </div>
+            <div className='list-Of-Buttons'>
+                <TypeList />
+            </div>
+        </div>
+    )
+}
 
 export class OpponentType extends React.Component {
     constructor(props){
