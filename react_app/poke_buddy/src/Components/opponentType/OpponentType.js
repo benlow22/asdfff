@@ -27,21 +27,37 @@ export function Homepage () {
     }
 
     useEffect (()=>{
-        document.addEventListener('keydown', event => {
+        document.addEventListener('keydown', (event) => {
             if(event.code === 'ShiftLeft') {
                 clearButtons();
     }})
     },[]);          // use [] because you only want to add the listener once at the beginning 
 
-    useEffect(()=>{
-        document.addEventListener('keydown', event => {
-            if (event.code === 'Digit1') {
-                console.log('YAY', pokemonTypes[0]);
-                handleAdd(pokemonTypes[0])
-            }
-        })
-    },[]);
+    const handleUserKeydown = (event) => {
+        if (event.code === 'Digit1') {
+            handleAdd(pokemonTypes[0])
+        }
+    }
 
+
+    const handleUserKeydown2 = (event) => {
+        if (event.code === 'Digit2') {
+            handleAdd(pokemonTypes[1])
+        }
+    }
+
+
+    useEffect(()=>{
+        document.addEventListener('keydown', handleUserKeydown);
+        return ()=>{document.removeEventListener('keydown', handleUserKeydown)}
+        
+    },);
+
+
+    useEffect(()=>{
+        document.addEventListener('keydown', handleUserKeydown2);
+        return ()=>{document.removeEventListener('keydown', handleUserKeydown2)}
+    },);
 
     return (
         <div>
