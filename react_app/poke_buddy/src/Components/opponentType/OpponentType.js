@@ -13,38 +13,27 @@ const initialState = {
 export function Homepage () {
     const [ type1, setType1 ] = useState('Type 1');
     const [ type2, setType2 ] = useState('Type 2');
-    const [ newType, setNewType]    = useState(null);
+    const [ newType, setNewType ]    = useState(null);
 
     const handleAdd = (type) => {
-        setNewType(type)
+        if (type1 === 'Type 1') {
+            setType1(type);
+        } else {
+            if (type !== type1) {
+                setType2(type)
+            }
+        }
     }
-
+    
     const clearButtons = () => {
-        setNewType('Type 1');
         setType1('Type 1');
         setType2('Type 2');
     }
 
-    useEffect(()=>{
-        if (newType !== null) {
-            if (type1 === 'Type 1') {
-                setType1(newType);
-            } else {
-                if (newType !== type1) {
-                    setType2(newType)
-                }
-            }
-        }
-    }, [newType]);
-
-
-
-
     useEffect (()=>{
-        document.addEventListener('keydown', event => {
-            if(event.code === 'Space') {
+        document.addEventListener('keypress', event => {
                 clearButtons();
-            }
+            
         })
             /*return () =>{ document.removeEventListener('keydown', event => {
                 if(event.code === 'Space') {
