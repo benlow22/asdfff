@@ -1,7 +1,7 @@
 import logo from './pokemonLogo.jpeg';
 import './App.css';
 //import {TypeList} from './Components/typeList/TypeList.js';
-import {OpponentType} from './Components/opponentType/OpponentType.js'
+import {Homepage, OpponentType} from './Components/opponentType/OpponentType.js'
 function App() {
   return (
     <div className="App">
@@ -18,7 +18,8 @@ function App() {
         >
           Enter
   </a>*/}
-        <OpponentType />
+        {/* <OpponentType />*/}
+        <Homepage />
       </header>
     </div>
   );

@@ -13,7 +13,11 @@ export function Homepage () {
     const [ type1, setType1 ] = useState('Type 1');
     const [ type2, setType2 ] = useState('Type 2');
 
-
+    const handleAdd = (type) => {
+        if (type1 === 'Type 1') {
+            setType1(type);
+        }
+    }
 
     return (
         <div>
@@ -22,13 +26,13 @@ export function Homepage () {
                 <TypeIndicator />
             </div>
             <div className='list-Of-Buttons'>
-                <TypeList />
+                <TypeList onAdd={handleAdd}/>
             </div>
         </div>
     )
 }
 
-export class OpponentType extends React.Component {
+/* export class OpponentType extends React.Component {
     constructor(props){
         super(props)
         this.state = {
@@ -68,13 +72,14 @@ export class OpponentType extends React.Component {
 
 
 
-    /* addOneState(newType) {
+    /* /////////
+    addOneState(newType) {
         console.log('weMade it to the OpponentType:', newType);
         this.setState({
             type1:newType
         })
-    } */
-
+    } /////////*/ 
+/*
     render() {
         let type1= this.state.type1;
         let type2= this.state.type2;    
@@ -87,4 +92,4 @@ export class OpponentType extends React.Component {
             </div>
         )
     }
-}
+} */
