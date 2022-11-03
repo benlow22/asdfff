@@ -5,7 +5,7 @@ import { TypeIndicator } from '../typeIndicators/TypeIndicators';
 const initialState = {
     type1: false,
     type2: false
-};
+}; 
 
 export class OpponentType extends React.Component {
     constructor(props){
@@ -55,10 +55,12 @@ export class OpponentType extends React.Component {
     } */
 
     render() {
-        return (
+        let type1= this.state.type1;
+        let type2= this.state.type2;    
+            return (
             <div className='type-buttons'>
-                <TypeIndicator type={this.state.type1}/>
-                <TypeIndicator type={this.state.type2}/>
+                <TypeIndicator type={type1}/>
+                <TypeIndicator type={type2}/>
                 <br></br>
                 <TypeList onAdd={this.addType}/>
             </div>
