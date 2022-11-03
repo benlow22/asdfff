@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { TypeList } from '../typeList/TypeList';
 import { TypeIndicator } from '../typeIndicators/TypeIndicators';
+import { pokemonTypes, keys } from '../../database';
 
 
 
@@ -32,8 +33,16 @@ export function Homepage () {
     }})
     },[]);          // use [] because you only want to add the listener once at the beginning 
 
+    useEffect(()=>{
+        document.addEventListener('keydown', event => {
+            if (event.code === 'Digit1') {
+                console.log('YAY', pokemonTypes[0]);
+                handleAdd(pokemonTypes[0])
+            }
+        })
+    },[]);
 
-    
+
     return (
         <div>
             <div className='opponent-Stats'>
