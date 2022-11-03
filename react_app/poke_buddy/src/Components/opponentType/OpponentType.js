@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { TypeList } from '../typeList/TypeList';
 import { TypeIndicator } from '../typeIndicators/TypeIndicators';
 
-const initialState = {
+/* const initialState = {
     type1: false,
     type2: false
-}; 
+}; */
 
 // using useState and function class 
 
@@ -16,15 +16,18 @@ export function Homepage () {
     const handleAdd = (type) => {
         if (type1 === 'Type 1') {
             setType1(type);
+        } else {
+            setType2(type);
         }
     }
 
     return (
         <div>
             <div className='opponent-Stats'>
-                <TypeIndicator />
-                <TypeIndicator />
+                <TypeIndicator type={type1}/>
+                <TypeIndicator type={type2}/>
             </div>
+            <br/>
             <div className='list-Of-Buttons'>
                 <TypeList onAdd={handleAdd}/>
             </div>
