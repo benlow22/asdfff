@@ -2,28 +2,39 @@ import React, { useEffect, useState } from 'react';
 import { TypeList } from '../typeList/TypeList';
 import { TypeIndicator } from '../typeIndicators/TypeIndicators';
 
-/* const initialState = {
-    type1: false,
-    type2: false
-}; */
+const initialState = {
+    type1: 'Type 1',
+    type2: 'Type 2',
+    newType: 'Type 1'
+}; 
 
 // using useState and function class 
 
 export function Homepage () {
     const [ type1, setType1 ] = useState('Type 1');
     const [ type2, setType2 ] = useState('Type 2');
-    const [ newType, setNewType]    = useState('Type 1');
+    const [ newType, setNewType]    = useState(null);
 
     const handleAdd = (type) => {
         setNewType(type)
     }
 
+    const clearButtons = () => {
+        setNewType('Type 1');
+        setType1('Type 1');
+        setType2('Type 2');
+    }
+
     useEffect(()=>{
-        if (type1 !== 'Type 1') {
-            setType2(newType)
-        } if (type1 === 'Type 1') {
-            setType1(newType);
-        } 
+        if (newType !== null) {
+            if (type1 === 'Type 1') {
+                setType1(newType);
+            } else {
+                if (newType !== type1) {
+                    setType2(newType)
+                }
+            }
+        }
     }, [newType]);
 
 
@@ -32,9 +43,7 @@ export function Homepage () {
     useEffect (()=>{
         document.addEventListener('keydown', event => {
             if(event.code === 'Space') {
-                setType1('Type 1');
-                setType2('Type 2');
-                setNewType('Type 1');
+                clearButtons();
             }
         })
             /*return () =>{ document.removeEventListener('keydown', event => {
