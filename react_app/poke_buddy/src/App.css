@@ -13,7 +13,7 @@
   }
 }
 .pokemon_Logo {
-  max-height: 500px;
+  max-height: 300px;
 }
 
 .App-header {
@@ -129,6 +129,16 @@ button:disabled {
   background-color: var(--water-color);
 }
 
+.opponent-Stats{
+  display: flex;
+  justify-content: center;
+}
+.two-types {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  width: 250px;
+}
 .type-indicator {
   height: 90px;
   width: 200px;
@@ -137,6 +147,7 @@ button:disabled {
   font-size: 40px;
   
 }
+
 
 .type-buttons {
   display: flex;

@@ -27,11 +27,11 @@ export function Homepage () {
     }
 
     useEffect (()=>{
-        document.addEventListener('keydown', (event) => {
+        document.addEventListener('keyup', (event) => {
             if(event.code === 'Space') {
                 clearButtons();
     }})
-    },[]);          // use [] because you only want to add the listener once at the beginning 
+    },);          // use [] because you only want to add the listener once at the beginning 
 
 
 
@@ -52,8 +52,10 @@ export function Homepage () {
     return (
         <div>
             <div className='opponent-Stats'>
-                <TypeIndicator type={type1}/>
-                <TypeIndicator type={type2}/>
+                <div className='two-types'>
+                    <TypeIndicator type={type1}/>
+                    <TypeIndicator type={type2}/>  
+                </div>
             </div>
             <br/>
             <div className='list-Of-Buttons'>
