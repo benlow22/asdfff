@@ -56,7 +56,14 @@ button:disabled {
 
 .full-List {
   max-width: 675px;
+
 }
+
+.list-Of-Buttons{
+  display:flex;
+  justify-content: center;
+}
+
 .Bug {
   background-color: #8ebc2e;
 }
@@ -132,12 +139,14 @@ button:disabled {
 .opponent-Stats{
   display: flex;
   justify-content: center;
+  min-height: 400px;
 }
 .two-types {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; 
   width: 250px;
+  align-content: center;
 }
 .type-indicator {
   height: 90px;
@@ -149,6 +158,23 @@ button:disabled {
 }
 
 
+h3 {
+  color: rgb(109, 109, 109);
+  font-size: 35px;
+
+}
+
+.statBox{
+  background-color: #b4b3b3;
+  height: 400px;
+  width: 300px;
+  border-radius: 20px;
+  border: #f90000;
+  border-width: px;
+  margin: 25px 5px;
+  display: block;
+  align-content:flex-start;
+}
 .type-buttons {
   display: flex;
   flex-direction: column;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { TypeList } from '../typeList/TypeList';
 import { TypeIndicator } from '../typeIndicators/TypeIndicators';
 import { pokemonTypes, keys } from '../../database';
-
+import { StatBox } from '../statBox/StatBox';
 
 
 // using useState and function class 
@@ -52,12 +52,13 @@ export function Homepage () {
     return (
         <div>
             <div className='opponent-Stats'>
+                <StatBox status='Resistant'/>
                 <div className='two-types'>
                     <TypeIndicator type={type1}/>
                     <TypeIndicator type={type2}/>  
                 </div>
+                <StatBox status='Weak'/>
             </div>
-            <br/>
             <div className='list-Of-Buttons'>
                 <TypeList onAdd={handleAdd}/>
             </div>
