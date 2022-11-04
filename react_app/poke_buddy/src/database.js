@@ -7,7 +7,26 @@ export const keys = [
     'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 
     'KeyZ', 'KeyX', 'KeyC' ];
 
-export const typeEffectiveness = {Bug:[1, 1, 1, 1, 1, 0.625, 1.6, 1.6, 1, 0.625, 0.625, 1, 1, 1, 1, 1.6, 1, 1]}
+export const typeEffectiveness = {
+    Bug:[1, 1, 1, 1, 1, 0.625, 1.6, 1.6, 1, 0.625, 0.625, 1, 1, 1, 1, 1.6, 1, 1],
+    Dark: [1.6,	0.625,	1,	1,	1.6,	1.6,	1,	1,	0.625,	1,	1,	1,	1,	1,	0.391,	1,	1,	1],
+    Dragon:[],
+    Electric:[],
+    Fairy:[],
+    Fighting:[],
+    Fire:[],
+    Flying:[],
+    Ghost:[],
+    Grass:[],
+    Ground:[],
+    Ice:[],
+    Normal:[],
+    Poison:[],
+    Psychic:[],
+    Rock:[],
+    Steel:[],
+    Water:[],
+    }
 /*
 typeEffectiveness.Bug.map((effectiveness, index) => {
     if (effectiveness === 1) {
