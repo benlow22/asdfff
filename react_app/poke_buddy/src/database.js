@@ -27,26 +27,29 @@ typeEffectiveness.Bug.map((effectiveness, index) => {
 */
 
 export const checkTypes = (state1, state2) => {
-    let effectObj = { veryWeak: [],
-        weak:[],
+    let effectObj = { veryResistant: [],
+        resistant:[],
         normal :[],
-        strong:[],
-        veryStrong:[]
+        weakTo:[],
+        veryWeakTo:[]
     } 
 
+    if (state1 === 'Type1') {
+        return effectObj;
+    }
     if (state2 === 'Type 2') {          // only one state
         typeEffectiveness[state1].forEach((effectiveness, index) => {
             if (effectiveness === 0.391) {
                 console.log(pokemonTypes[index]);
-                effectObj.veryWeak.push(pokemonTypes[index])
+                effectObj.veryResistant.push(pokemonTypes[index])
             } if (effectiveness === 0.625) {
-                effectObj.weak.push(pokemonTypes[index])
+                effectObj.resistant.push(pokemonTypes[index])
             } if (effectiveness === 1) {
                 effectObj.normal.push(pokemonTypes[index])
             } if (effectiveness === 1.60) {
-                effectObj.strong.push(pokemonTypes[index])
+                effectObj.weakTo.push(pokemonTypes[index])
             } if (effectiveness === 2.56) {
-                effectObj.veryStrong.push(pokemonTypes[index])
+                effectObj.veryWeakTo.push(pokemonTypes[index])
             }
         })
     }

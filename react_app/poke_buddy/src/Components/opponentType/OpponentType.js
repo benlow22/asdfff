@@ -55,9 +55,9 @@ export function Homepage () {
                 <StatBox status='Resistant' type1={type1} type2={type2}/>
                 <div className='two-types'>
                     <TypeIndicator type={type1}/>
-                    <TypeIndicator type={type2}/>  
+                    <TypeIndicator type1={type1} type={type2}/>  
                 </div>
-                <StatBox status='Weak' type2={type2}/>
+                <StatBox status='Weak' type1={type1} type2={type2}/>
             </div>
             <div className='list-Of-Buttons'>
                 <TypeList onAdd={handleAdd}/>
