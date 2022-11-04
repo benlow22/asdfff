@@ -33,31 +33,22 @@ export function Homepage () {
     }})
     },[]);          // use [] because you only want to add the listener once at the beginning 
 
-    const handleUserKeydown = (event) => {
-        if (event.code === 'Digit1') {
-            handleAdd(pokemonTypes[0])
+
+
+    const handleAllKeysArray = (event) =>  {
+        if (keys.includes(event.code)) {
+            let index = keys.findIndex( (key) => key === event.code);
+            console.log(index);
+            handleAdd(pokemonTypes[index-1]) 
         }
+
     }
 
-
-    const handleUserKeydown2 = (event) => {
-        if (event.code === 'Digit2') {
-            handleAdd(pokemonTypes[1])
-        }
-    }
-
-
     useEffect(()=>{
-        document.addEventListener('keydown', handleUserKeydown);
-        return ()=>{document.removeEventListener('keydown', handleUserKeydown)}
-        
+        document.addEventListener('keydown', handleAllKeysArray);
+        return ()=>{document.removeEventListener('keydown', handleAllKeysArray)}
     },);
 
-
-    useEffect(()=>{
-        document.addEventListener('keydown', handleUserKeydown2);
-        return ()=>{document.removeEventListener('keydown', handleUserKeydown2)}
-    },);
 
     return (
         <div>
