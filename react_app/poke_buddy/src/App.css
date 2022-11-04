@@ -174,7 +174,12 @@ button:disabled {
 h4 {
   color: rgb(109, 109, 109);
   font-size: 35px;
+  margin: 0;
 
+}
+
+p {
+  margin: 0;
 }
 
 h5 {
@@ -194,6 +199,7 @@ h5 {
   align-content: flex-start;
   justify-content: flex-start;
   align-items: flex-start;
+  flex-wrap: wrap
 }
 
 .type-buttons {
