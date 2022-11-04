@@ -6,3 +6,50 @@ export const keys = [
     'KeyQ', 'KeyW', 'KeyE', 'KeyR', 'KeyT',
     'KeyA', 'KeyS', 'KeyD', 'KeyF', 'KeyG', 
     'KeyZ', 'KeyX', 'KeyC' ];
+
+export const typeEffectiveness = {Bug:[1, 1, 1, 1, 1, 0.625, 1.6, 1.6, 1, 0.625, 0.625, 1, 1, 1, 1, 1.6, 1, 1]}
+/*
+typeEffectiveness.Bug.map((effectiveness, index) => {
+    if (effectiveness === 1) {
+        pokemonTypes[index]
+    }
+
+})*/
+
+/*
+[   
+    [0.391x],
+    [0.625x],
+    [1x],
+    [1.60x],
+    [2.56x]
+]
+*/
+
+export const checkTypes = (state1, state2) => {
+    let effectObj = { veryWeak: [],
+        weak:[],
+        normal :[],
+        strong:[],
+        veryStrong:[]
+    } 
+
+    if (state2 === 'Type 2') {          // only one state
+        typeEffectiveness[state1].forEach((effectiveness, index) => {
+            if (effectiveness === 0.391) {
+                console.log(pokemonTypes[index]);
+                effectObj.veryWeak.push(pokemonTypes[index])
+            } if (effectiveness === 0.625) {
+                effectObj.weak.push(pokemonTypes[index])
+            } if (effectiveness === 1) {
+                effectObj.normal.push(pokemonTypes[index])
+            } if (effectiveness === 1.60) {
+                effectObj.strong.push(pokemonTypes[index])
+            } if (effectiveness === 2.56) {
+                effectObj.veryStrong.push(pokemonTypes[index])
+            }
+        })
+    }
+
+    return effectObj;
+}

@@ -52,12 +52,12 @@ export function Homepage () {
     return (
         <div>
             <div className='opponent-Stats'>
-                <StatBox status='Resistant'/>
+                <StatBox status='Resistant' type1={type1} type2={type2}/>
                 <div className='two-types'>
                     <TypeIndicator type={type1}/>
                     <TypeIndicator type={type2}/>  
                 </div>
-                <StatBox status='Weak'/>
+                <StatBox status='Weak' type2={type2}/>
             </div>
             <div className='list-Of-Buttons'>
                 <TypeList onAdd={handleAdd}/>
