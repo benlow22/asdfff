@@ -158,12 +158,16 @@ button:disabled {
 }
 
 
-h3 {
+h4 {
   color: rgb(109, 109, 109);
   font-size: 35px;
 
 }
 
+h5 {
+  font-size: 20px;
+  display: flex;
+}
 .statBox{
   background-color: #b4b3b3;
   height: 400px;
@@ -172,9 +176,12 @@ h3 {
   border: #f90000;
   border-width: px;
   margin: 25px 5px;
-  display: block;
-  align-content:flex-start;
+  padding: 15px;
+  display: flexbox;
+  align-content: space-around;
+  justify-content: flex-start;
 }
+
 .type-buttons {
   display: flex;
   flex-direction: column;
