@@ -28,7 +28,7 @@ export function Homepage () {
 
     useEffect (()=>{
         document.addEventListener('keydown', (event) => {
-            if(event.code === 'ShiftLeft') {
+            if(event.code === 'Space') {
                 clearButtons();
     }})
     },[]);          // use [] because you only want to add the listener once at the beginning 
@@ -36,12 +36,11 @@ export function Homepage () {
 
 
     const handleAllKeysArray = (event) =>  {
-        if (keys.includes(event.code)) {
-            let index = keys.findIndex( (key) => key === event.code);
+        if (keys.includes(event.code)) {            // checks if code is in array
+            let index = keys.findIndex( (key) => key === event.code);   // returns index in keys array
             console.log(index);
-            handleAdd(pokemonTypes[index-1]) 
+            handleAdd(pokemonTypes[index-1])        // uses index to add type to state
         }
-
     }
 
     useEffect(()=>{
