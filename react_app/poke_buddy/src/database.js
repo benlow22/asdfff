@@ -8,8 +8,8 @@ export const keys = [
     'KeyZ', 'KeyX', 'KeyC' ];
 
 export const typeEffectiveness = {
-    Bug:[1, 1, 1, 1, 1, 0.625, 1.6, 1.6, 1, 0.625, 0.625, 1, 1, 1, 1, 1.6, 1, 1],
-    Dark: [1.6,	0.625,	1,	1,	1.6,	1.6,	1,	1,	0.625,	1,	1,	1,	1,	1,	0.391,	1,	1,	1],
+    'Bug':[1, 1, 1, 1, 1, 0.625, 1.6, 1.6, 1, 0.625, 0.625, 1, 1, 1, 1, 1.6, 1, 1],
+    'Dark': [1.6,	0.625,	1,	1,	1.6,	1.6,	1,	1,	0.625,	1,	1,	1,	1,	1,	0.391,	1,	1,	1]/*,
     Dragon:[],
     Electric:[],
     Fairy:[],
@@ -25,7 +25,7 @@ export const typeEffectiveness = {
     Psychic:[],
     Rock:[],
     Steel:[],
-    Water:[],
+    Water:[],*/
     }
 /*
 typeEffectiveness.Bug.map((effectiveness, index) => {
@@ -53,11 +53,11 @@ export const checkTypes = (state1, state2) => {
         veryWeakTo:[]
     } 
 
-    if (state1 === 'Type1') {
-        return effectObj;
-    }
-    if (state2 === 'Type 2') {          // only one state
-        typeEffectiveness[state1].forEach((effectiveness, index) => {
+    let arrayToSort = typeEffectiveness[state1];
+    console.log(typeEffectiveness[state1]);
+
+    const sortThroughArray = (array) => {
+        array.forEach((effectiveness, index) => {
             if (effectiveness === 0.391) {
                 console.log(pokemonTypes[index]);
                 effectObj.veryResistant.push(pokemonTypes[index])
@@ -72,6 +72,19 @@ export const checkTypes = (state1, state2) => {
             }
         })
     }
+
+    if (state2 === 'Type 2') {          // only one state
+        sortThroughArray(arrayToSort)
+    }
+
+    if (state1 !== 'Type 1' && state2 !== 'Type 2') {
+        let mergedArr = typeEffectiveness[state1].map((type1,index)=>
+            type1*typeEffectiveness[state2][index]
+        );
+        sortThroughArray(mergedArr);
+
+    };
+    
 
     return effectObj;
 }

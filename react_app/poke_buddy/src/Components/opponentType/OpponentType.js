@@ -28,7 +28,7 @@ export function Homepage () {
 
     useEffect (()=>{
         document.addEventListener('keyup', (event) => {
-            if(event.code === 'Space') {
+            if(event.code === 'Space' || event.code === 'KeyV') {
                 clearButtons();
     }})
     },);          // use [] because you only want to add the listener once at the beginning 
