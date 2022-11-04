@@ -58,16 +58,15 @@ export const checkTypes = (state1, state2) => {
 
     const sortThroughArray = (array) => {
         array.forEach((effectiveness, index) => {
-            if (effectiveness === 0.391) {
-                console.log(pokemonTypes[index]);
-                effectObj.veryResistant.push(pokemonTypes[index])
-            } if (effectiveness === 0.625) {
+            if (effectiveness === 0.391 || effectiveness === (0.625*0.625)) {
                 effectObj.resistant.push(pokemonTypes[index])
+            } if (effectiveness === 0.625) {
+                effectObj.veryResistant.push(pokemonTypes[index])
             } if (effectiveness === 1) {
                 effectObj.normal.push(pokemonTypes[index])
-            } if (effectiveness === 1.60) {
+            } if (effectiveness === (1.6*1.6)) {
                 effectObj.weakTo.push(pokemonTypes[index])
-            } if (effectiveness === 2.56) {
+            } if (effectiveness === 1.60) {
                 effectObj.veryWeakTo.push(pokemonTypes[index])
             }
         })
@@ -79,7 +78,7 @@ export const checkTypes = (state1, state2) => {
 
     if (state1 !== 'Type 1' && state2 !== 'Type 2') {
         let mergedArr = typeEffectiveness[state1].map((type1,index)=>
-            type1*typeEffectiveness[state2][index]
+            (type1*typeEffectiveness[state2][index])
         );
         sortThroughArray(mergedArr);
 
