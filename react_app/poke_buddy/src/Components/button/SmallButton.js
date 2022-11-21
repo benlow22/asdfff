@@ -1,20 +1,13 @@
 import React from 'react';
 
 
-export function Button (props) {
- 
-    const handleAddType = ({target}) => {
-        const type = target.value     // get value from button clicked
-        props.onClick(type)
-    }
+export function SmallButton (props) {
     
     return (
         <button 
             //onClick={this.handleClick}
-            type="submit"
-            className={props.typeName} 
-            value={props.typeName} 
-            onClick={handleAddType}>
+            disabled
+            className={`small-button ${props.typeName}`}>
             {props.typeName}
         </button>
     )
